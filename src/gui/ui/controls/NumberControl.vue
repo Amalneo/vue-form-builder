@@ -11,7 +11,6 @@
                            :readonly="this.control.readonly"
                            :name="control.fieldName"
                            :step="controlStep"
-                           @change="numberChange"
                            v-model="control.value" />
                 </div>
             </div>
@@ -27,7 +26,6 @@
                        :readonly="this.control.readonly"
                        :name="control.fieldName"
                        :step="controlStep"
-                       @change="numberChange"
                        v-model="control.value" />
             </div>
         </div>
@@ -44,9 +42,6 @@
             this.control.value = 123;
         },
         mounted() {
-            if (!_.isEmpty(this.control.defaultValue)) {
-                this.control.value = this.control.defaultValue;
-            }
 
             // after hook
             Hooks.Control.afterInit.run(this.control, $(this.$el).find("input"));

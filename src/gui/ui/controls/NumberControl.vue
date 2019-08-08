@@ -11,6 +11,7 @@
                            :readonly="this.control.readonly"
                            :name="control.fieldName"
                            :step="controlStep"
+                           @change="numberChange"
                            v-model="control.value" />
                 </div>
             </div>
@@ -26,6 +27,7 @@
                        :readonly="this.control.readonly"
                        :name="control.fieldName"
                        :step="controlStep"
+                       @change="numberChange"
                        v-model="control.value" />
             </div>
         </div>
@@ -39,7 +41,7 @@
         name: "NumberControl",
         props: ['control', 'labelPosition'],
         created() {
-            this.control.value = 0;
+            this.control.value = 123;
         },
         mounted() {
             if (!_.isEmpty(this.control.defaultValue)) {

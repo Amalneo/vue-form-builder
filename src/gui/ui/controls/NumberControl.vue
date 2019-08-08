@@ -11,7 +11,6 @@
                            :readonly="this.control.readonly"
                            :name="control.fieldName"
                            :step="controlStep"
-                           @change="numberChange"
                            v-model="control.value" />
                 </div>
             </div>
@@ -27,7 +26,6 @@
                        :readonly="this.control.readonly"
                        :name="control.fieldName"
                        :step="controlStep"
-                       @change="numberChange"
                        v-model="control.value" />
             </div>
         </div>
